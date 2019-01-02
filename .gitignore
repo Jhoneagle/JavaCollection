@@ -1,0 +1,12 @@
+build
+.idea
+.gradle
+.nb-gradle
+out
+bin
+.settings
+*~
+*.db
+*.iml
+*.log
+nbproject
