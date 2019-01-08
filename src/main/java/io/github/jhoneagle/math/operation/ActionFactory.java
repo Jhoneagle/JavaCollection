@@ -106,4 +106,20 @@ public class ActionFactory {
     public Action getNegation(Double first) {
         return new Negation(first);
     }
+    
+    public Action getLog(Action first) {
+        return new Log(first);
+    }
+
+    public Action getLog(Double first) {
+        return new Log(first);
+    }
+
+    public Action getLn(Action first) {
+        return new Ln(first);
+    }
+
+    public Action getLn(Double first) {
+        return new Ln(first);
+    }
 }

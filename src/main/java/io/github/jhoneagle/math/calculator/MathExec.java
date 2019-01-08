@@ -20,7 +20,7 @@ public class MathExec {
     }
 
     public MathExec(String str) {
-        this.str = replace(str);;
+        this.str = replace(str);
         this.factory = new ActionFactory();
     }
 
@@ -48,7 +48,10 @@ public class MathExec {
     }
 
     private String replace(String old) {
-        return old.replace(" ", "");
+        String pi = old.replace("pi", Double.toString(Math.PI));
+        String e = pi.replace("e", Double.toString(Math.E));
+
+        return e.replace(" ", "");
     }
 
     private void nextChar() {
@@ -140,6 +143,10 @@ public class MathExec {
                 x = factory.getTan(x);
             } else if (func.equals("abs")) {
                 x = factory.getAbsolute(x);
+            } else if (func.equals("log")) {
+                x = factory.getLog(x);
+            } else if (func.equals("ln")) {
+                x = factory.getLn(x);
             } else {
                 throw new RuntimeException("Unknown function: " + func);
             }
