@@ -1,25 +1,17 @@
 package io.github.jhoneagle.math.calculator;
 
 import io.github.jhoneagle.math.Matrix;
-import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class MatrixCalculatorTest {
-    private MatrixCalculator calc;
-
-    @Before
-    public void setUp() {
-        calc = new MatrixCalculator();
-    }
-
     @Test
     public void additionMatrix() {
-        Matrix<Double> one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
-        Matrix<Double> two = createMatrix(8.0, -3.0, 0.0, -1.0, 7.32, 1.0, 4.31, 0.0, -2.13);
+        Matrix one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
+        Matrix two = createMatrix(8.0, -3.0, 0.0, -1.0, 7.32, 1.0, 4.31, 0.0, -2.13);
 
-        Matrix<Double> result = calc.additionMatrix(one, two);
+        Matrix result = AdvancedMathOperations.additionMatrix(one, two);
 
         assertEquals(9, result.get(1, 1), 0.01);
         assertEquals(-1, result.get(1, 2), 0.01);
@@ -37,7 +29,7 @@ public class MatrixCalculatorTest {
         Double[][] one = createArray(-8.1, 0.0, 2.32, 3.14, 7.0, 0.0, -3.1, -10.1, 12.0);
         Double[][] two = createArray(0.0, 11.0, -4.01, 5.3, 0.012, -2.0, 1.1, 7.0, -2.0);
 
-        Double[][] result = calc.additionArray(one, two);
+        Double[][] result = AdvancedMathOperations.additionArray(one, two);
 
         assertEquals(-8.1, result[0][0], 0.01);
         assertEquals(11, result[0][1], 0.01);
@@ -52,10 +44,10 @@ public class MatrixCalculatorTest {
 
     @Test
     public void multiplicationMatrix() {
-        Matrix<Double> one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
-        Matrix<Double> two = createMatrix(8.0, -3.0, 0.0, -1.0, 7.32, 1.0, 4.31, 0.0, -2.13);
+        Matrix one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
+        Matrix two = createMatrix(8.0, -3.0, 0.0, -1.0, 7.32, 1.0, 4.31, 0.0, -2.13);
 
-        Matrix<Double> result = calc.multiplicationMatrix(one, two);
+        Matrix result = AdvancedMathOperations.multiplicationMatrix(one, two);
 
         assertEquals(31.86, result.get(1, 1), 0.01);
         assertEquals(11.64, result.get(1, 2), 0.01);
@@ -73,7 +65,7 @@ public class MatrixCalculatorTest {
         Double[][] one = createArray(-8.1, 0.0, 2.32, 3.14, 7.0, 0.0, -3.1, -10.1, 12.0);
         Double[][] two = createArray(0.0, 11.0, -4.01, 5.3, 0.012, -2.0, 1.1, 7.0, -2.0);
 
-        Double[][] result = calc.multiplicationArray(one, two);
+        Double[][] result = AdvancedMathOperations.multiplicationArray(one, two);
 
         assertEquals(2.55, result[0][0], 0.01);
         assertEquals(-72.86, result[0][1], 0.01);
@@ -88,9 +80,9 @@ public class MatrixCalculatorTest {
 
     @Test
     public void transpositionMatrix() {
-        Matrix<Double> one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
+        Matrix one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
 
-        Matrix<Double> result = calc.transpositionMatrix(one);
+        Matrix result = AdvancedMathOperations.transpositionMatrix(one);
 
         assertEquals(1, result.get(1, 1), 0.01);
         assertEquals(0, result.get(1, 2), 0.01);
@@ -107,7 +99,7 @@ public class MatrixCalculatorTest {
     public void transpositionArray() {
         Double[][] one = createArray(-8.1, 0.0, 2.32, 3.14, 7.0, 0.0, -3.1, -10.1, 12.0);
 
-        Double[][] result = calc.transpositionArray(one);
+        Double[][] result = AdvancedMathOperations.transpositionArray(one);
 
         assertEquals(-8.1, result[0][0], 0.01);
         assertEquals(3.14, result[0][1], 0.01);
@@ -122,9 +114,9 @@ public class MatrixCalculatorTest {
 
     @Test
     public void determinantMatrix() {
-        Matrix<Double> one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
+        Matrix one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
 
-        double result = calc.determinantMatrix(one);
+        double result = AdvancedMathOperations.determinantMatrix(one);
 
         assertEquals(50.87, result, 0.01);
     }
@@ -133,16 +125,16 @@ public class MatrixCalculatorTest {
     public void determinantArray() {
         Double[][] one = createArray(-8.1, 0.0, 2.32, 3.14, 7.0, 0.0, -3.1, -10.1, 12.0);
 
-        double result = calc.determinantArray(one);
+        double result = AdvancedMathOperations.determinantArray(one);
 
         assertEquals(-703.63, result, 0.01);
     }
 
     @Test
     public void scalarMultiplyMatrix() {
-        Matrix<Double> one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
+        Matrix one = createMatrix(1.0, 2.0, 6.0, 0.0, 2.2, -14.1, 1.56, 9.0, -5.2);
 
-        Matrix<Double> result = calc.scalarMultiplyMatrix(-1.5, one);
+        Matrix result = AdvancedMathOperations.scalarMultiplyMatrix(-1.5, one);
 
         assertEquals(-1.5, result.get(1, 1), 0.01);
         assertEquals(-3, result.get(1, 2), 0.01);
@@ -159,7 +151,7 @@ public class MatrixCalculatorTest {
     public void scalarMultiplyArray() {
         Double[][] one = createArray(-8.1, 0.0, 2.32, 3.14, 7.0, 0.0, -3.1, -10.1, 12.0);
 
-        Double[][] result = calc.scalarMultiplyArray(4.12, one);
+        Double[][] result = AdvancedMathOperations.scalarMultiplyArray(4.12, one);
 
         assertEquals(-33.37, result[0][0], 0.01);
         assertEquals(0, result[0][1], 0.01);
@@ -172,8 +164,8 @@ public class MatrixCalculatorTest {
         assertEquals(49.44, result[2][2], 0.01);
     }
 
-    private Matrix<Double> createMatrix(Double... values) {
-        return new Matrix<>(createArray(values));
+    private Matrix createMatrix(Double... values) {
+        return new Matrix(createArray(values));
     }
 
     private Double[][] createArray(Double... values) {

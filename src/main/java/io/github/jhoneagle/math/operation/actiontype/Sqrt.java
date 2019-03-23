@@ -29,9 +29,9 @@ public class Sqrt extends Action<Double> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null) {
-            return "sqrt(" + first.stringify() + ")";
+            return "sqrt(" + first.toString() + ")";
         } else {
             return "sqrt(" + firstValue + ")";
         }

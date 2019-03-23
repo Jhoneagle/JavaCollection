@@ -33,7 +33,7 @@ public class Kombination implements Term {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         return "{" + n + "," + k + "}";
     }
 }

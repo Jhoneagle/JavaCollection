@@ -29,9 +29,9 @@ public class Tan extends Action<Double> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null) {
-            return "tan(" + first.stringify() + ")";
+            return "tan(" + first.toString() + ")";
         } else {
             return "tan(" + firstValue + ")";
         }

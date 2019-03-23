@@ -1,71 +1,63 @@
 package io.github.jhoneagle.math.calculator;
 
 import io.github.jhoneagle.math.Vector;
-import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class VectorCalculatorTest {
-    private VectorCalculator calc;
-
-    @Before
-    public void setUp() {
-        calc = new VectorCalculator();
-    }
-
     @Test
     public void additionVector() {
-        Vector<Double> one = createVector(1.0, 2.0, 6.0);
-        Vector<Double> two = createVector(8.0, -3.0, 0.0);
+        Vector one = createVector(1.0, 2.0, 6.0);
+        Vector two = createVector(8.0, -3.0, 0.0);
 
-        Vector<Double> result = calc.additionVector(one, two);
+        Vector result = AdvancedMathOperations.additionVector(one, two);
 
-        assertEquals(9, (double) result.get(1), 0.0);
-        assertEquals(-1, (double) result.get(2), 0.0);
-        assertEquals(6, (double) result.get(3), 0.0);
+        assertEquals(9, result.get(1), 0.0);
+        assertEquals(-1, result.get(2), 0.0);
+        assertEquals(6, result.get(3), 0.0);
     }
 
     @Test
     public void crossProductVector() {
-        Vector<Double> one = createVector(1.0, 2.0, 6.0);
-        Vector<Double> two = createVector(8.0, -3.0, 0.0);
+        Vector one = createVector(1.0, 2.0, 6.0);
+        Vector two = createVector(8.0, -3.0, 0.0);
 
-        Vector<Double> result = calc.crossProductVector(one, two);
+        Vector result = AdvancedMathOperations.crossProductVector(one, two);
 
-        assertEquals(18, (double) result.get(1), 0.0);
-        assertEquals(48, (double) result.get(2), 0.0);
-        assertEquals(-19, (double) result.get(3), 0.0);
+        assertEquals(18, result.get(1), 0.0);
+        assertEquals(48, result.get(2), 0.0);
+        assertEquals(-19, result.get(3), 0.0);
     }
 
     @Test
     public void dotProductVector() {
-        Vector<Double> one = createVector(1.0, 2.0, 6.0);
-        Vector<Double> two = createVector(8.0, -3.0, 0.0);
+        Vector one = createVector(1.0, 2.0, 6.0);
+        Vector two = createVector(8.0, -3.0, 0.0);
 
-        double result = calc.dotProductVector(one, two);
+        double result = AdvancedMathOperations.dotProductVector(one, two);
 
-        assertEquals(2, (double) result, 0.0);
+        assertEquals(2, result, 0.0);
     }
 
     @Test
     public void lengthVector() {
-        Vector<Double> one = createVector(1.0, 2.0, 6.0);
+        Vector one = createVector(1.0, 2.0, 6.0);
 
-        double result = calc.lengthVector(one);
+        double result = AdvancedMathOperations.lengthVector(one);
 
-        assertEquals(41, (double) result, 0.01);
+        assertEquals(Math.sqrt(41), result, 0.01);
     }
 
     @Test
     public void scalarMultiplyVector() {
-        Vector<Double> one = createVector(1.0, 2.0, 6.0);
+        Vector one = createVector(1.0, 2.0, 6.0);
 
-        Vector<Double> result = calc.scalarMultiplyVector(5.0, one);
+        Vector result = AdvancedMathOperations.scalarMultiplyVector(5.0, one);
 
-        assertEquals(5, (double) result.get(1), 0.0);
-        assertEquals(10, (double) result.get(2), 0.0);
-        assertEquals(30, (double) result.get(3), 0.0);
+        assertEquals(5, result.get(1), 0.0);
+        assertEquals(10, result.get(2), 0.0);
+        assertEquals(30, result.get(3), 0.0);
     }
 
     @Test
@@ -73,11 +65,11 @@ public class VectorCalculatorTest {
         Double[] one = createArray(-12.0, -1.0, 21.0);
         Double[] two = createArray(7.0, 9.0, 0.0);
 
-        Double[] result = calc.additionArray(one, two);
+        Double[] result = AdvancedMathOperations.additionArray(one, two);
 
-        assertEquals(-5, (double) result[0], 0.0);
-        assertEquals(8, (double) result[1], 0.0);
-        assertEquals(21, (double) result[2], 0.0);
+        assertEquals(-5, result[0], 0.0);
+        assertEquals(8, result[1], 0.0);
+        assertEquals(21, result[2], 0.0);
     }
 
     @Test
@@ -85,11 +77,11 @@ public class VectorCalculatorTest {
         Double[] one = createArray(-12.0, -1.0, 21.0);
         Double[] two = createArray(7.0, 9.0, 0.0);
 
-        Double[] result = calc.crossProductArray(one, two);
+        Double[] result = AdvancedMathOperations.crossProductArray(one, two);
 
-        assertEquals(-189, (double) result[0], 0.0);
-        assertEquals(147, (double) result[1], 0.0);
-        assertEquals(-101, (double) result[2], 0.0);
+        assertEquals(-189, result[0], 0.0);
+        assertEquals(147, result[1], 0.0);
+        assertEquals(-101, result[2], 0.0);
     }
 
     @Test
@@ -97,33 +89,33 @@ public class VectorCalculatorTest {
         Double[] one = createArray(-12.0, -1.0, 21.0);
         Double[] two = createArray(7.0, 9.0, 0.0);
 
-        double result = calc.dotProductArray(one, two);
+        double result = AdvancedMathOperations.dotProductArray(one, two);
 
-        assertEquals(-93, (double) result, 0.0);
+        assertEquals(-93, result, 0.0);
     }
 
     @Test
     public void lengthArray() {
         Double[] one = createArray(-12.0, -1.0, 21.0);
 
-        double result = calc.lengthArray(one);
+        double result = AdvancedMathOperations.lengthArray(one);
 
-        assertEquals(586, (double) result, 0.0);
+        assertEquals(586, result, 0.0);
     }
 
     @Test
     public void scalarMultiplyArray() {
         Double[] one = createArray(-12.0, -1.0, 21.0);
 
-        Double[] result = calc.scalarMultiplyArray(3.14, one);
+        Double[] result = AdvancedMathOperations.scalarMultiplyArray(3.14, one);
 
-        assertEquals(-37.68, (double) result[0], 0.0);
-        assertEquals(-3.14, (double) result[1], 0.0);
-        assertEquals(65.94, (double) result[2], 0.0);
+        assertEquals(-37.68, result[0], 0.0);
+        assertEquals(-3.14, result[1], 0.0);
+        assertEquals(65.94, result[2], 0.0);
     }
 
-    private Vector<Double> createVector(Double... values) {
-        return new Vector<>(values);
+    private Vector createVector(Double... values) {
+        return new Vector(values);
     }
 
     private Double[] createArray(Double... values) {

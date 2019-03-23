@@ -29,9 +29,9 @@ public class Ln extends Action<Double> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null) {
-            return "ln(" + first.stringify() + ")";
+            return "ln(" + first.toString() + ")";
         } else {
             return "ln(" + firstValue + ")";
         }

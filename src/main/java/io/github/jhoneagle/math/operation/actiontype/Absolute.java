@@ -29,9 +29,9 @@ public class Absolute extends Action<Double> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null) {
-            return "abs(" + first.stringify() + ")";
+            return "abs(" + first.toString() + ")";
         } else {
             return "abs(" + firstValue + ")";
         }

@@ -29,9 +29,9 @@ public class Log extends Action<Double> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null) {
-            return "log(" + first.stringify() + ")";
+            return "log(" + first.toString() + ")";
         } else {
             return "log(" + firstValue + ")";
         }

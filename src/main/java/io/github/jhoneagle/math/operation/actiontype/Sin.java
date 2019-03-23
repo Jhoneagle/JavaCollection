@@ -29,9 +29,9 @@ public class Sin extends Action<Double> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null) {
-            return "sin(" + first.stringify() + ")";
+            return "sin(" + first.toString() + ")";
         } else {
             return "sin(" + firstValue + ")";
         }

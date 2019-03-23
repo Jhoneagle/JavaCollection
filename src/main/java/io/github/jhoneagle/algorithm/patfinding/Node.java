@@ -1,7 +1,5 @@
 package io.github.jhoneagle.algorithm.patfinding;
 
-import java.util.Properties;
-
 public class Node implements Comparable<Node> {
     protected boolean visited;
     protected double distanceToStart;

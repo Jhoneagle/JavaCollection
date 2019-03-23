@@ -29,9 +29,9 @@ public class Cos extends Action<Double> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null) {
-            return "cos(" + first.stringify() + ")";
+            return "cos(" + first.toString() + ")";
         } else {
             return "cos(" + firstValue + ")";
         }

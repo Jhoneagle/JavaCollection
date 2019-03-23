@@ -33,7 +33,7 @@ public class ProbabilityCalculator {
     }
 
     public void init(Term nk) {
-        init(nk.stringify());
+        init(nk.toString());
     }
 
     public void init(long n, long k) {
@@ -54,7 +54,7 @@ public class ProbabilityCalculator {
     }
 
     public Double permutation(Term nk) {
-        return permutation(nk.stringify());
+        return permutation(nk.toString());
     }
 
     public Double permutation(long n) {
@@ -79,7 +79,7 @@ public class ProbabilityCalculator {
     }
 
     public Double variation(Term nk) {
-        return variation(nk.stringify());
+        return variation(nk.toString());
     }
 
     public Double variation(long n, long k) {
@@ -110,7 +110,7 @@ public class ProbabilityCalculator {
     }
 
     public Double combination(Term nk) {
-        return combination(nk.stringify());
+        return combination(nk.toString());
     }
 
     public Double combination(long n, long k) {

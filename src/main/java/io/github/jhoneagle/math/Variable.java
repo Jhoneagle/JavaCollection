@@ -23,7 +23,7 @@ public class Variable implements Term {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (degree != 1) {
             return name + "^" + degree;
         } else {

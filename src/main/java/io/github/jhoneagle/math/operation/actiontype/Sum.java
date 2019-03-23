@@ -35,9 +35,9 @@ public class Sum extends Action<Double> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null && second != null) {
-            return first.stringify() + "+" + second.stringify();
+            return first.toString() + "+" + second.toString();
         } else {
             return firstValue + "+" + secondValue;
         }

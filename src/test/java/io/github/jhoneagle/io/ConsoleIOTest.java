@@ -10,7 +10,8 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ConsoleIOTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();

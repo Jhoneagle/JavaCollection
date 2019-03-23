@@ -42,9 +42,9 @@ public class Factorial extends Action<Long> {
     }
 
     @Override
-    public String stringify() {
+    public String toString() {
         if (first != null) {
-            return "(" + first.stringify() + ")!";
+            return "(" + first.toString() + ")!";
         } else {
             return "(" + firstValue + ")!";
         }

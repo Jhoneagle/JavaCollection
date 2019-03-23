@@ -69,7 +69,7 @@ public class MathExecTest {
         Action result = math.parse(func);
 
         func = "(-((4.0)))^(3.0)+(1.0)*cos((0.15))+sqrt((9.0))";
-        String actual = result.stringify();
+        String actual = result.toString();
 
         assertTrue(actual.contains(func));
     }
@@ -80,7 +80,7 @@ public class MathExecTest {
         Action result = math.parse(func);
 
         func = "((3.14)^(3.0)+sin((7.0)))!+sqrt(abs((-(cos((24.0)/(3.0))))))-(9.0)*cos((18.0))";
-        String actual = result.stringify();
+        String actual = result.toString();
 
         assertTrue(actual.contains(func));
     }
@@ -91,7 +91,7 @@ public class MathExecTest {
         Action result = math.parse(func);
 
         func = "sin((12.0))+(18.13)-abs((-((4.0)))+(2.0))*(3.0)^(2.0)";
-        String actual = result.stringify();
+        String actual = result.toString();
 
         assertTrue(actual.contains(func));
     }
@@ -102,7 +102,7 @@ public class MathExecTest {
         Action result = math.parse(func);
 
         func = "sqrt(abs(tan((16.0)*(3.14))-(12.0)^(0.14)))*(31.89)";
-        String actual = result.stringify();
+        String actual = result.toString();
 
         assertTrue(actual.contains(func));
     }
