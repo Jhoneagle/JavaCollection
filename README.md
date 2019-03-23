@@ -1,6 +1,6 @@
 # Java collection
 
-[![Build Status](https://travis-ci.org/Jhoneagle/JavaCollection.svg?branch=master)
+![Build Status](https://travis-ci.org/Jhoneagle/JavaCollection.svg?branch=master)
 [![codecov](https://codecov.io/gh/Jhoneagle/collection/branch/master/graph/badge.svg)](https://codecov.io/gh/Jhoneagle/collection)
 
 ## About
